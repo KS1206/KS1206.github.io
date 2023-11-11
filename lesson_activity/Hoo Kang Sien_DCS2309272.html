@@ -1,0 +1,63 @@
+<html>
+<head>
+   <title>Book List</title>
+
+   <style>
+      table {
+         border-collapse: collapse;
+         width: 100%;
+      }
+
+      table, th, td {
+         border: 1px solid black;
+      }
+
+      th, td {
+         padding: 8px;
+         text-align: left;
+      }
+   </style>
+</head>
+<body>
+   <h1>Book List</h1>
+   <table id="bookTable">
+      <tr>
+         <th>Title</th>
+         <th>Author</th>
+         <th>Genre</th>
+      </tr>
+   </table>
+
+  <script>
+   const table = document.getElementById('bookTable');
+
+   fetch('Hoo Kang Sien_DCS2309272.xml') 
+       .then(response => response.text())
+       .then(data => {
+           const parser = new DOMParser();
+           const xmlDoc = parser.parseFromString(data, 'text/xml');
+           const books = xmlDoc.getElementsByTagName('book');
+
+           for (let i = 0; i < books.length; i++) {
+               const book = books[i];
+               const title = book.querySelector('title').textContent;
+               const author = book.querySelector('author').textContent; 
+               const genre = book.querySelector('genre').textContent;
+
+               const row = table.insertRow(i + 1);
+               const titleCell = row.insertCell(0);
+               const authorCell = row.insertCell(1);
+               const genreCell = row.insertCell(2);
+
+               titleCell.textContent = title;
+               authorCell.textContent = author;
+               genreCell.textContent = genre;
+           }
+       })
+       .catch(error => {
+           console.error('An error occurred:', error);
+       });
+</script>
+
+</body>
+</html>
