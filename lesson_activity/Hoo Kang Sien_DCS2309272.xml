@@ -1,0 +1,22 @@
+<books>
+   <book>
+      <title>Animal Farm</title>
+      <author>George Orwell</author>
+      <genre>Political satire</genre>
+   </book>
+   <book>
+      <title>One Piece</title>
+      <author>Eiichiro Oda</author>
+      <genre>Action Manga</genre>
+   </book>
+   <book>
+      <title>Dracula</title>
+      <author>Bram Stoker</author>
+      <genre>Horror Fiction</genre>
+   </book>
+   <book>
+      <title>Forrest Gump</title>
+      <author>Winston Groom</author>
+      <genre>Comedy</genre>
+   </book>
+</books>
