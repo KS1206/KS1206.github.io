@@ -1,0 +1,15 @@
+.shop{
+    display:flex;
+}
+.shop img{
+    width:50%;
+}
+.info{
+    width:50%;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
